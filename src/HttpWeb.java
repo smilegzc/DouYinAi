@@ -9,6 +9,7 @@ import java.io.*;
  * http.connectUrl(url, param)
  * //拿到返回信息
  * JSONObject jsonObj = http.getJSONObject();
+ * //若JSON中只有键值对则可以直接使用该方式
  * JSONValue jsonValue = http.getJSONValue(value);
  */
 public class HttpWeb {

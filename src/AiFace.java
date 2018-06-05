@@ -20,7 +20,7 @@ import org.json.JSONObject;
 /**
  * 调用示例：
  * AiFace face = new Aiface();
- * String imgDir = "C:/....";
+ * String imgDir = "C:/...";
  * face.setImage(imgDir);
  *
  * 获取图片中人数
