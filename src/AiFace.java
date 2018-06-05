@@ -18,7 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * 调用实例：
+ * 调用示例：
  * AiFace face = new Aiface();
  * String imgDir = "C:/....";
  * face.setImage(imgDir);
@@ -38,13 +38,13 @@ public class AiFace {
 	private int[][] sab = null;
 	private int faceSum = 0;
 	private int ret = 0;
-	
+	//放入图片
 	public void setImage(String imgDir) {
 		String param = getParam(getBase64(imgDir));
 		faceInfo.connectUrl(url, param);
 		getSABInfo();
 	}
-	
+	//获取sex,age,beauty信息，返回值为一个二维数组，例如sab[i][j],i为第i+1个人，j值为0、1、2，对应sex,age,beauty
 	public int[][] getSAB() {
 		return sab;
 	}
@@ -68,7 +68,7 @@ public class AiFace {
 	public int getBeauty(int index) {
 		return sab[index][2];
 	}
-	
+	//从服务器拿到图片信息
 	private void getSABInfo() {
 		JSONObject json = faceInfo.getJSONObject();
 		ret = json.getInt("ret");
@@ -183,7 +183,7 @@ public class AiFace {
 		
 		return inByte;
 	}
-	
+	//获取网络传输参数
 	private String getParam(String imgBase64) {
 		String time = String.valueOf(new Date().getTime()/1000);//获取时间戳
 		
@@ -217,7 +217,7 @@ public class AiFace {
 		sb.append("&sign=").append(sign.toUpperCase());
 		return sb.toString();
 	}
-	
+	//计算密钥
 	private String stringMD5(String input) {
 		String[] strHex = { "0", "1", "2", "3", "4", "5",
 				            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };

@@ -2,6 +2,15 @@ import org.json.JSONObject;
 import java.net.*;
 import java.io.*;
 
+/**
+ * 负责网络传输，使用示例
+ * HttpWeb http = new HttpWeb();
+ * //传入url和参数
+ * http.connectUrl(url, param)
+ * //拿到返回信息
+ * JSONObject jsonObj = http.getJSONObject();
+ * JSONValue jsonValue = http.getJSONValue(value);
+ */
 public class HttpWeb {
 	private JSONObject json = null;
 	

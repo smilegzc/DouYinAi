@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class AiBot {
-	private final String imageName = "girl.png";
+	//private final String imageName = "girl.png";
 	private Random rand = new Random();
 	
 	private final int BEAUTY_THRESHOLD = 80; //颜值界限
@@ -33,10 +33,10 @@ public class AiBot {
 			e.printStackTrace();
 		}
 	}
-	//获取屏幕截图
+	//获取屏幕截图，返回截图路径
 	public String getScreenShot() {
 		String[] getScreenCommand = {"adb shell screencap -p /sdcard/girl.png",
-				"adb pull /sdcard/girl.png E:/face"};
+				"adb pull /sdcard/girl.png E:/face"}; //截图，并将图片传到本地
 		for(String cmd: getScreenCommand) {
 			executeCommand(cmd);
 		}
@@ -62,6 +62,7 @@ public class AiBot {
 	public void touchScreen(String imageDir) {
 		//如果颜值大于设定值则点赞并关注
 		int[] girlInfo = foundGirl(imageDir);
+		//判断为图片中为单人、女孩、颜值大于设定值则点赞并关注
 		if(girlInfo[0] >= 0 && girlInfo[0] < 50 && girlInfo[1] > BEAUTY_THRESHOLD) {
 			String likeComm = String.format("adb shell input tap %s %s",
 					likeX + rand.nextInt(10), likeY + rand.nextInt(10));
