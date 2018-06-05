@@ -3,7 +3,7 @@ import java.net.*;
 import java.io.*;
 
 /**
- * 负责网络传输，使用示例
+ * 负责网络传输，使用示例.
  * HttpWeb http = new HttpWeb();
  * //传入url和参数
  * http.connectUrl(url, param)

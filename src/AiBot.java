@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 /**
- * 手机自动操作类，使用了ADB
+ * 手机自动操作类，使用了ADB.
  */
 public class AiBot {
 	//private final String imageName = "girl.png";
